@@ -1,0 +1,43 @@
+[
+  {
+    "ticket_id": "T-1001",
+    "channel": "email",
+    "customer_tier": "standard",
+    "message": "My delivery is late by 2 days. Can you tell me when it will arrive?",
+    "metadata": {
+      "order_id": "O-555"
+    }
+  },
+  {
+    "ticket_id": "T-1002",
+    "channel": "chat",
+    "customer_tier": "premium",
+    "message": "The mangoes I received are spoiled and leaking. This is the second time. I am very upset.",
+    "metadata": {
+      "order_id": "O-556"
+    }
+  },
+  {
+    "ticket_id": "T-1003",
+    "channel": "email",
+    "customer_tier": "standard",
+    "message": "I think my account got hacked. I see login attempts from another country.",
+    "metadata": {}
+  },
+  {
+    "ticket_id": "T-1004",
+    "channel": "chat",
+    "customer_tier": "standard",
+    "message": "How do I change my delivery address for next week?",
+    "metadata": {}
+  },
+  {
+    "ticket_id": "T-1005",
+    "channel": "email",
+    "customer_tier": "standard",
+    "message": "Your app keeps crashing when I try to checkout.",
+    "metadata": {
+      "device": "Android"
+    }
+  }
+]

@@ -1,0 +1,16 @@
+## Session 3 Workshop Dependencies
+##
+## Modes:
+## - mock: no API key required (deterministic outputs)
+## - live: uses OPENAI_API_KEY + OPENAI_MODEL
+##
+## CrewAI demo:
+## - crew_resolver.py runs a CrewAI orchestration flow (visible agent-to-agent handoffs)
+## - requires OPENAI_API_KEY
+
+crewai==0.70.0
+openai>=1.13.3
+python-dotenv>=1.0.0
+pydantic>=2.4.2
+pyyaml>=6.0.1
+rich>=13.7.0

@@ -1,0 +1,45 @@
+[
+  {
+    "ticket_id": "T-2001",
+    "channel": "email",
+    "customer_tier": "standard",
+    "message": "I will do a chargeback if you don't fix this today. I paid and nothing arrived.",
+    "metadata": {
+      "order_id": "O-700"
+    }
+  },
+  {
+    "ticket_id": "T-2002",
+    "channel": "chat",
+    "customer_tier": "standard",
+    "message": "Someone stole my phone and I think they accessed my account. Please help ASAP.",
+    "metadata": {}
+  },
+  {
+    "ticket_id": "T-2003",
+    "channel": "email",
+    "customer_tier": "premium",
+    "message": "This is unsafe. There was a sharp object inside the food box. I got injured.",
+    "metadata": {
+      "order_id": "O-701"
+    }
+  },
+  {
+    "ticket_id": "T-2004",
+    "channel": "email",
+    "customer_tier": "standard",
+    "message": "Refund me now. Your service is terrible.",
+    "metadata": {
+      "order_id": "O-702"
+    }
+  },
+  {
+    "ticket_id": "T-2005",
+    "channel": "chat",
+    "customer_tier": "standard",
+    "message": "My order shows delivered but I didn't get it. This happened twice.",
+    "metadata": {
+      "order_id": "O-703"
+    }
+  }
+]

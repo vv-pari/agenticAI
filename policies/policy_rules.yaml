@@ -1,0 +1,29 @@
+forbidden_phrases:
+  - "we will refund"
+  - "refund will be processed"
+  - "guarantee"
+  - "legal advice"
+  - "sue"
+  - "share your password"
+  - "share your otp"
+  - "send your cvv"
+  - "we have credited"
+  - "confirmed your order status"
+
+must_escalate_keywords:
+  - "fraud"
+  - "hacked"
+  - "account takeover"
+  - "stolen"
+  - "chargeback"
+  - "police"
+  - "threat"
+  - "unsafe"
+  - "injury"
+
+pii_request_patterns:
+  - "password"
+  - "otp"
+  - "cvv"
+  - "card number"
+  - "bank account"
