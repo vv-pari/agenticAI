@@ -1,0 +1,11 @@
+id,name,company,company_size,industry,role,trial_day,logins,projects_created,team_members_invited,features_activated,support_tickets,pricing_page_visits,payment_method_added,discount_code_attempted,session_duration_avg_min,last_login_days_ago,source_channel
+TU-001,Priya Sharma,UrbanGrid Designs,45,Architecture & Design,Operations Manager,9,14,3,4,"task_boards|time_tracking|file_sharing|gantt_charts|integrations",0,3,true,false,38,0,google_ads
+TU-002,Marcus Johnson,BrightLoop Media,120,Digital Marketing,VP of Marketing,12,2,1,0,"task_boards",1,0,false,false,7,8,linkedin_ads
+TU-003,Sarah Chen,Pinnacle Consulting Group,300,Management Consulting,Senior Project Manager,6,8,2,6,"task_boards|time_tracking|reporting_dashboards|resource_allocation",2,5,false,true,25,1,g2_review_site
+TU-004,Raj Patel,Raj Patel Freelance,1,Freelance Development,Freelance Developer,11,18,5,0,"task_boards|time_tracking|file_sharing|api_access|automations|integrations",3,1,false,true,52,0,product_hunt
+TU-005,Chen Wei,TechScale Solutions,800,Enterprise Software,IT Director,4,5,1,12,"task_boards|sso_setup|admin_console|audit_logs",4,2,false,false,20,1,sales_outbound
+TU-006,Emily Nakamura,GreenLeaf Organics,60,Food & Beverage,Co-Founder,10,11,4,3,"task_boards|file_sharing|time_tracking|automations",1,4,true,false,30,0,referral
+TU-007,David Okafor,Swift Logistics Inc.,200,Logistics & Supply Chain,Head of Operations,13,3,1,1,"task_boards|gantt_charts",0,1,false,false,12,5,google_organic
+TU-008,Lisa Andersson,Nordic Creative Studio,25,Creative Agency,Studio Director,7,10,3,5,"task_boards|file_sharing|time_tracking|client_portal|reporting_dashboards",1,6,false,true,35,0,capterra
+TU-009,James Whitfield,Whitfield & Associates,10,Legal Services,Managing Partner,14,1,0,0,"",0,0,false,false,3,12,google_ads
+TU-010,Anika Rossi,HealthBridge Analytics,150,Healthcare Technology,Product Manager,8,9,2,7,"task_boards|reporting_dashboards|integrations|automations|resource_allocation",2,3,true,false,28,1,linkedin_organic

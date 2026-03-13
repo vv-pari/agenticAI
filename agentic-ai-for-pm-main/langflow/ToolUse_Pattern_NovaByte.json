@@ -1,0 +1,465 @@
+{
+  "data": {
+    "nodes": [
+      {
+        "id": "TextInput-USERID",
+        "type": "genericNode",
+        "position": {"x": 100, "y": 300},
+        "data": {
+          "id": "TextInput-USERID",
+          "display_name": "User ID Input",
+          "description": "Enter a trial user ID to look up",
+          "type": "TextInput",
+          "node": {
+            "base_classes": ["Message"],
+            "display_name": "User ID Input",
+            "description": "The trial user ID to analyze",
+            "template": {
+              "_type": "Component",
+              "input_value": {
+                "type": "str",
+                "required": true,
+                "show": true,
+                "multiline": false,
+                "value": "TU-004",
+                "display_name": "User ID",
+                "info": "Enter a user ID (e.g., TU-001 through TU-010). The agent will fetch their data from the mock APIs."
+              }
+            },
+            "outputs": [
+              {
+                "name": "text",
+                "display_name": "User ID",
+                "method": "text_response",
+                "types": ["Message"]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "APIRequest-USAGE-TOOL",
+        "type": "genericNode",
+        "position": {"x": 500, "y": 150},
+        "data": {
+          "id": "APIRequest-USAGE-TOOL",
+          "display_name": "Tool: Fetch Usage Data",
+          "description": "Fetches product usage data from Usage Analytics API",
+          "type": "APIRequest",
+          "node": {
+            "base_classes": ["Data"],
+            "display_name": "Tool: Fetch Usage Data",
+            "description": "Calls the NovaByte Usage Analytics API (Mixpanel mock) to get product usage data for a trial user. DEFAULT: Beeceptor mock API. FALLBACK: GitHub raw URL. ADVANCED: Make.com webhook.",
+            "icon": "globe",
+            "template": {
+              "_type": "Component",
+              "urls": {
+                "type": "str",
+                "required": true,
+                "show": true,
+                "multiline": false,
+                "value": "https://raw.githubusercontent.com/shameekc/agentic-ai-for-pm/main/sample_data/mock_api/usage_data.json",
+                "display_name": "API URL",
+                "info": "Paste YOUR Beeceptor URL here (e.g., https://your-name.free.beeceptor.com/usage_data). FALLBACK (GitHub): https://raw.githubusercontent.com/shameekc/agentic-ai-for-pm/main/sample_data/mock_api/usage_data.json — ADVANCED (Make.com): Paste your Make.com webhook URL and switch to POST."
+              },
+              "method": {
+                "type": "str",
+                "required": true,
+                "show": true,
+                "value": "GET",
+                "display_name": "HTTP Method",
+                "options": ["GET", "POST"]
+              },
+              "headers": {
+                "type": "dict",
+                "required": false,
+                "show": true,
+                "value": {},
+                "display_name": "Headers"
+              },
+              "body": {
+                "type": "dict",
+                "required": false,
+                "show": true,
+                "value": {},
+                "display_name": "Request Body",
+                "info": "For Beeceptor or GitHub: leave empty (GET returns all users). For Make.com webhook: set method to POST and body to {\"user_id\": \"TU-004\"}."
+              },
+              "timeout": {
+                "type": "int",
+                "required": false,
+                "show": true,
+                "value": 30,
+                "display_name": "Timeout (seconds)"
+              }
+            },
+            "outputs": [
+              {
+                "name": "data",
+                "display_name": "Usage Data",
+                "method": "make_request",
+                "types": ["Data"]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "APIRequest-BILLING-TOOL",
+        "type": "genericNode",
+        "position": {"x": 500, "y": 500},
+        "data": {
+          "id": "APIRequest-BILLING-TOOL",
+          "display_name": "Tool: Fetch Billing Data",
+          "description": "Fetches billing signals from Billing Signals API",
+          "type": "APIRequest",
+          "node": {
+            "base_classes": ["Data"],
+            "display_name": "Tool: Fetch Billing Data",
+            "description": "Calls the NovaByte Billing Signals API (Stripe mock) to get billing data for a trial user. DEFAULT: Beeceptor mock API. FALLBACK: GitHub raw URL. ADVANCED: Make.com webhook.",
+            "icon": "globe",
+            "template": {
+              "_type": "Component",
+              "urls": {
+                "type": "str",
+                "required": true,
+                "show": true,
+                "multiline": false,
+                "value": "https://raw.githubusercontent.com/shameekc/agentic-ai-for-pm/main/sample_data/mock_api/billing_data.json",
+                "display_name": "API URL",
+                "info": "Paste YOUR Beeceptor URL here (e.g., https://your-name.free.beeceptor.com/billing_data). FALLBACK (GitHub): https://raw.githubusercontent.com/shameekc/agentic-ai-for-pm/main/sample_data/mock_api/billing_data.json — ADVANCED (Make.com): Paste your Make.com webhook URL and switch to POST."
+              },
+              "method": {
+                "type": "str",
+                "required": true,
+                "show": true,
+                "value": "GET",
+                "display_name": "HTTP Method",
+                "options": ["GET", "POST"]
+              },
+              "headers": {
+                "type": "dict",
+                "required": false,
+                "show": true,
+                "value": {},
+                "display_name": "Headers"
+              },
+              "body": {
+                "type": "dict",
+                "required": false,
+                "show": true,
+                "value": {},
+                "display_name": "Request Body",
+                "info": "For Beeceptor or GitHub: leave empty (GET returns all users). For Make.com webhook: set method to POST and body to {\"user_id\": \"TU-004\"}."
+              },
+              "timeout": {
+                "type": "int",
+                "required": false,
+                "show": true,
+                "value": 30,
+                "display_name": "Timeout (seconds)"
+              }
+            },
+            "outputs": [
+              {
+                "name": "data",
+                "display_name": "Billing Data",
+                "method": "make_request",
+                "types": ["Data"]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "Prompt-COMBINE-DATA",
+        "type": "genericNode",
+        "position": {"x": 900, "y": 300},
+        "data": {
+          "id": "Prompt-COMBINE-DATA",
+          "display_name": "Combine Data Sources",
+          "description": "Combines usage and billing data for analysis",
+          "type": "Prompt",
+          "node": {
+            "base_classes": ["Message"],
+            "display_name": "Combine Data Sources",
+            "description": "Merges data from multiple API calls into a single analysis prompt",
+            "template": {
+              "_type": "Component",
+              "template": {
+                "type": "str",
+                "required": true,
+                "show": true,
+                "multiline": true,
+                "value": "DATA GATHERED FROM API TOOLS:\n\nThe user requested data for User ID: {user_id}\n\n--- USAGE DATA (from Mixpanel API) ---\n{usage}\n\n--- BILLING DATA (from Stripe API) ---\n{billing}\n\nAnalyze this user's conversion likelihood based on ALL available data. Look up the user by their ID in the JSON responses above.",
+                "display_name": "Combined Template"
+              },
+              "user_id": {
+                "type": "str",
+                "required": true,
+                "show": true,
+                "value": "",
+                "display_name": "User ID",
+                "input_types": ["Message"]
+              },
+              "usage": {
+                "type": "str",
+                "required": true,
+                "show": true,
+                "value": "",
+                "display_name": "Usage Data",
+                "input_types": ["Data", "Message"]
+              },
+              "billing": {
+                "type": "str",
+                "required": true,
+                "show": true,
+                "value": "",
+                "display_name": "Billing Data",
+                "input_types": ["Data", "Message"]
+              }
+            },
+            "outputs": [
+              {
+                "name": "prompt",
+                "display_name": "Combined Data",
+                "method": "build_prompt",
+                "types": ["Message"]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "OpenAIModel-ANALYZER",
+        "type": "genericNode",
+        "position": {"x": 1300, "y": 300},
+        "data": {
+          "id": "OpenAIModel-ANALYZER",
+          "display_name": "Analyzer Agent",
+          "description": "Analyzes combined data and recommends conversion action",
+          "type": "OpenAIModel",
+          "node": {
+            "base_classes": ["Message"],
+            "display_name": "Analyzer Agent",
+            "description": "Takes data from multiple API tool calls and produces a conversion recommendation",
+            "icon": "OpenAI",
+            "template": {
+              "_type": "Component",
+              "model_name": {
+                "type": "str",
+                "required": true,
+                "show": true,
+                "value": "gpt-4o-mini",
+                "display_name": "Model Name"
+              },
+              "openai_api_key": {
+                "type": "str",
+                "required": true,
+                "show": true,
+                "value": "",
+                "display_name": "OpenAI API Key",
+                "password": true
+              },
+              "temperature": {
+                "type": "float",
+                "required": false,
+                "show": true,
+                "value": 0.3,
+                "display_name": "Temperature"
+              },
+              "system_message": {
+                "type": "str",
+                "required": false,
+                "show": true,
+                "multiline": true,
+                "value": "You are a Trial Conversion Analyst at NovaByte, a B2B SaaS project management platform.\n\nYou have access to data from multiple sources (usage analytics and billing signals). Analyze ALL the data and produce a structured conversion recommendation.\n\nRespond in this exact format:\n\n## CONVERSION ANALYSIS\n\n**Intent Score:** [0-100]\n**Intent Category:** [HIGH | MEDIUM | LOW | RISKY]\n**Confidence:** [0-100%]\n\n## KEY SIGNALS\n- [List the 3-5 most important signals from the data, with interpretation]\n\n## RISK FACTORS\n- [List any concerns or risks]\n\n## RECOMMENDED ACTION\n**Primary Action:** [specific action]\n**Timing:** [IMMEDIATE | THIS_WEEK | CAN_WAIT]\n**Channel:** [Email | Slack to Sales | In-app | Phone call]\n\n## REASONING\n[2-3 sentences explaining your recommendation, referencing specific data points]\n\n## WHAT NOT TO DO\n[1-2 things to avoid with this specific user]\n\nBe specific. Reference actual data points. Do not be generic.",
+                "display_name": "System Message",
+                "info": "Analysis prompt - modify to change how the agent interprets data"
+              },
+              "input_value": {
+                "type": "str",
+                "required": true,
+                "show": true,
+                "multiline": true,
+                "value": "",
+                "display_name": "Input",
+                "input_types": ["Message"]
+              }
+            },
+            "outputs": [
+              {
+                "name": "text_output",
+                "display_name": "Recommendation",
+                "method": "text_response",
+                "types": ["Message"]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "TextOutput-RECOMMENDATION",
+        "type": "genericNode",
+        "position": {"x": 1700, "y": 300},
+        "data": {
+          "id": "TextOutput-RECOMMENDATION",
+          "display_name": "Conversion Recommendation",
+          "description": "Final recommendation with reasoning",
+          "type": "TextOutput",
+          "node": {
+            "base_classes": ["Message"],
+            "display_name": "Conversion Recommendation",
+            "description": "The agent's final conversion recommendation based on all gathered data",
+            "template": {
+              "_type": "Component",
+              "input_value": {
+                "type": "str",
+                "required": true,
+                "show": true,
+                "multiline": true,
+                "value": "",
+                "display_name": "Output",
+                "input_types": ["Message"]
+              }
+            },
+            "outputs": [
+              {
+                "name": "text",
+                "display_name": "Final Recommendation",
+                "method": "text_response",
+                "types": ["Message"]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "Note-TOOLUSE",
+        "type": "noteNode",
+        "position": {"x": 100, "y": 50},
+        "data": {
+          "node": {
+            "description": "# Tool Use Pattern: Agent-Driven Data Gathering\n\n## How this flow works:\n1. **User ID Input** — Just an ID (the agent fetches everything else)\n2. **Tool: Usage Data** — Calls Usage Analytics API for product usage\n3. **Tool: Billing Data** — Calls Billing Signals API for billing signals\n4. **Combine** — Merges data from both API calls\n5. **Analyzer Agent** — Produces structured recommendation\n\n## Key Insight:\nThe agent didn't need us to feed it data — it went and GOT it via API calls.\nThis is what separates an agent from a chatbot.\n\n## API Endpoints:\n- **Default (Beeceptor):** Pre-configured with Beeceptor mock API URLs\n- **Fallback (GitHub):** Use raw GitHub URLs that return all user data\n- **Advanced (Make.com):** Paste your Make.com webhook URLs into each API Request node\n\n## Exercise:\n- Try different user IDs (TU-001 through TU-010)\n- Modify the Analyzer Agent prompt to weight different signals\n- Add a third data source (e.g., support ticket data)\n\n## Bridge to Session 2: MCP\nToday we wired these API calls manually. With MCP, the agent would know which tool to call automatically — like USB-C for AI.",
+            "display_name": "Instructions",
+            "template": {}
+          }
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge-userid-to-usage",
+        "source": "TextInput-USERID",
+        "target": "Prompt-COMBINE-DATA",
+        "sourceHandle": "{\"dataType\":\"TextInput\",\"id\":\"TextInput-USERID\",\"name\":\"text\",\"output_types\":[\"Message\"]}",
+        "targetHandle": "{\"fieldName\":\"user_id\",\"id\":\"Prompt-COMBINE-DATA\",\"inputTypes\":[\"Message\"],\"type\":\"str\"}",
+        "data": {
+          "sourceHandle": {
+            "dataType": "TextInput",
+            "id": "TextInput-USERID",
+            "name": "text",
+            "output_types": ["Message"]
+          },
+          "targetHandle": {
+            "fieldName": "user_id",
+            "id": "Prompt-COMBINE-DATA",
+            "inputTypes": ["Message"],
+            "type": "str"
+          }
+        }
+      },
+      {
+        "id": "edge-usage-to-combine",
+        "source": "APIRequest-USAGE-TOOL",
+        "target": "Prompt-COMBINE-DATA",
+        "sourceHandle": "{\"dataType\":\"APIRequest\",\"id\":\"APIRequest-USAGE-TOOL\",\"name\":\"data\",\"output_types\":[\"Data\"]}",
+        "targetHandle": "{\"fieldName\":\"usage\",\"id\":\"Prompt-COMBINE-DATA\",\"inputTypes\":[\"Data\",\"Message\"],\"type\":\"str\"}",
+        "data": {
+          "sourceHandle": {
+            "dataType": "APIRequest",
+            "id": "APIRequest-USAGE-TOOL",
+            "name": "data",
+            "output_types": ["Data"]
+          },
+          "targetHandle": {
+            "fieldName": "usage",
+            "id": "Prompt-COMBINE-DATA",
+            "inputTypes": ["Data", "Message"],
+            "type": "str"
+          }
+        }
+      },
+      {
+        "id": "edge-billing-to-combine",
+        "source": "APIRequest-BILLING-TOOL",
+        "target": "Prompt-COMBINE-DATA",
+        "sourceHandle": "{\"dataType\":\"APIRequest\",\"id\":\"APIRequest-BILLING-TOOL\",\"name\":\"data\",\"output_types\":[\"Data\"]}",
+        "targetHandle": "{\"fieldName\":\"billing\",\"id\":\"Prompt-COMBINE-DATA\",\"inputTypes\":[\"Data\",\"Message\"],\"type\":\"str\"}",
+        "data": {
+          "sourceHandle": {
+            "dataType": "APIRequest",
+            "id": "APIRequest-BILLING-TOOL",
+            "name": "data",
+            "output_types": ["Data"]
+          },
+          "targetHandle": {
+            "fieldName": "billing",
+            "id": "Prompt-COMBINE-DATA",
+            "inputTypes": ["Data", "Message"],
+            "type": "str"
+          }
+        }
+      },
+      {
+        "id": "edge-combine-to-analyzer",
+        "source": "Prompt-COMBINE-DATA",
+        "target": "OpenAIModel-ANALYZER",
+        "sourceHandle": "{\"dataType\":\"Prompt\",\"id\":\"Prompt-COMBINE-DATA\",\"name\":\"prompt\",\"output_types\":[\"Message\"]}",
+        "targetHandle": "{\"fieldName\":\"input_value\",\"id\":\"OpenAIModel-ANALYZER\",\"inputTypes\":[\"Message\"],\"type\":\"str\"}",
+        "data": {
+          "sourceHandle": {
+            "dataType": "Prompt",
+            "id": "Prompt-COMBINE-DATA",
+            "name": "prompt",
+            "output_types": ["Message"]
+          },
+          "targetHandle": {
+            "fieldName": "input_value",
+            "id": "OpenAIModel-ANALYZER",
+            "inputTypes": ["Message"],
+            "type": "str"
+          }
+        }
+      },
+      {
+        "id": "edge-analyzer-to-output",
+        "source": "OpenAIModel-ANALYZER",
+        "target": "TextOutput-RECOMMENDATION",
+        "sourceHandle": "{\"dataType\":\"OpenAIModel\",\"id\":\"OpenAIModel-ANALYZER\",\"name\":\"text_output\",\"output_types\":[\"Message\"]}",
+        "targetHandle": "{\"fieldName\":\"input_value\",\"id\":\"TextOutput-RECOMMENDATION\",\"inputTypes\":[\"Message\"],\"type\":\"str\"}",
+        "data": {
+          "sourceHandle": {
+            "dataType": "OpenAIModel",
+            "id": "OpenAIModel-ANALYZER",
+            "name": "text_output",
+            "output_types": ["Message"]
+          },
+          "targetHandle": {
+            "fieldName": "input_value",
+            "id": "TextOutput-RECOMMENDATION",
+            "inputTypes": ["Message"],
+            "type": "str"
+          }
+        }
+      }
+    ],
+    "viewport": {"x": 0, "y": 0, "zoom": 0.7}
+  },
+  "description": "Tool Use Pattern: Agent gathers data from multiple API sources (Usage Analytics API + Billing Signals API) before making a conversion recommendation. Uses API Request nodes to fetch real data from endpoints. Demonstrates how agents fetch their own information rather than relying on pre-fed data.",
+  "name": "Tool Use Pattern - NovaByte Data Gathering",
+  "endpoint_name": null,
+  "is_component": false,
+  "last_tested_version": "1.1.0",
+  "tags": ["session1", "tool-use-pattern", "novabyte", "api-request"]
+}

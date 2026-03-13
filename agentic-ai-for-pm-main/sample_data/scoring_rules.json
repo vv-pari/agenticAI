@@ -1,0 +1,222 @@
+{
+  "schema_version": "1.0",
+  "description": "NovaByte Free Trial Conversion Scoring Rules - Used by AI agent to classify trial users and recommend actions",
+
+  "signal_weights": {
+    "engagement_signals": {
+      "logins": {
+        "weight": 10,
+        "description": "Points per login (capped at max_score)",
+        "max_score": 20,
+        "scoring": [
+          { "range": [0, 2], "points": 2 },
+          { "range": [3, 7], "points": 10 },
+          { "range": [8, 12], "points": 16 },
+          { "range": [13, 999], "points": 20 }
+        ]
+      },
+      "projects_created": {
+        "weight": 15,
+        "max_score": 15,
+        "scoring": [
+          { "range": [0, 0], "points": 0 },
+          { "range": [1, 1], "points": 5 },
+          { "range": [2, 3], "points": 10 },
+          { "range": [4, 999], "points": 15 }
+        ]
+      },
+      "team_members_invited": {
+        "weight": 20,
+        "max_score": 20,
+        "description": "Team invites are the strongest engagement predictor",
+        "scoring": [
+          { "range": [0, 0], "points": 0 },
+          { "range": [1, 2], "points": 8 },
+          { "range": [3, 5], "points": 14 },
+          { "range": [6, 999], "points": 20 }
+        ]
+      },
+      "features_activated_count": {
+        "weight": 15,
+        "max_score": 15,
+        "scoring": [
+          { "range": [0, 0], "points": 0 },
+          { "range": [1, 2], "points": 5 },
+          { "range": [3, 4], "points": 10 },
+          { "range": [5, 999], "points": 15 }
+        ]
+      },
+      "session_duration_avg_min": {
+        "weight": 10,
+        "max_score": 10,
+        "scoring": [
+          { "range": [0, 5], "points": 1 },
+          { "range": [6, 15], "points": 4 },
+          { "range": [16, 30], "points": 7 },
+          { "range": [31, 999], "points": 10 }
+        ]
+      }
+    },
+    "buying_signals": {
+      "pricing_page_visits": {
+        "weight": 10,
+        "max_score": 10,
+        "scoring": [
+          { "range": [0, 0], "points": 0 },
+          { "range": [1, 2], "points": 4 },
+          { "range": [3, 5], "points": 8 },
+          { "range": [6, 999], "points": 10 }
+        ]
+      },
+      "payment_method_added": {
+        "weight": 15,
+        "points_if_true": 15,
+        "points_if_false": 0
+      },
+      "discount_code_attempted": {
+        "weight": 5,
+        "points_if_true": 5,
+        "points_if_false": 0,
+        "note": "Indicates price sensitivity - high intent but may need incentive"
+      }
+    },
+    "risk_signals": {
+      "last_login_days_ago": {
+        "weight": -15,
+        "description": "Negative signal - deducts from score",
+        "scoring": [
+          { "range": [0, 1], "penalty": 0 },
+          { "range": [2, 4], "penalty": -5 },
+          { "range": [5, 7], "penalty": -10 },
+          { "range": [8, 999], "penalty": -15 }
+        ]
+      },
+      "support_tickets_unresolved": {
+        "weight": -5,
+        "description": "High ticket count without resolution signals friction",
+        "scoring": [
+          { "range": [0, 1], "penalty": 0 },
+          { "range": [2, 3], "penalty": -3 },
+          { "range": [4, 999], "penalty": -5 }
+        ]
+      }
+    }
+  },
+
+  "max_possible_score": 120,
+
+  "classification_thresholds": {
+    "high_intent": {
+      "min_score": 75,
+      "label": "High Intent - Ready to Convert",
+      "description": "Strong engagement and buying signals. User has embedded the product into their workflow."
+    },
+    "medium_intent": {
+      "min_score": 45,
+      "max_score": 74,
+      "label": "Medium Intent - Nurture Needed",
+      "description": "Moderate engagement but missing key buying signals or team adoption."
+    },
+    "low_intent": {
+      "min_score": 20,
+      "max_score": 44,
+      "label": "Low Intent - At Risk",
+      "description": "Minimal engagement. User has not found value or encountered friction."
+    },
+    "risky": {
+      "min_score": 0,
+      "max_score": 19,
+      "label": "Risky - Likely to Churn",
+      "description": "Near-zero engagement. Trial likely abandoned."
+    }
+  },
+
+  "action_mapping": {
+    "high_intent": {
+      "primary_action": "send_conversion_offer",
+      "details": {
+        "email_template": "conversion_ready",
+        "offer_type": "streamlined_upgrade",
+        "discount": "none_unless_discount_code_attempted",
+        "discount_if_price_sensitive": "10_percent_annual",
+        "urgency_message": true,
+        "sales_touch": "optional_personal_email_from_csm",
+        "timing": "immediate"
+      },
+      "secondary_actions": [
+        "create_crm_opportunity_stage_negotiation",
+        "notify_account_executive_if_company_size_gt_100",
+        "schedule_onboarding_call_for_enterprise"
+      ]
+    },
+    "medium_intent": {
+      "primary_action": "send_nurture_sequence",
+      "details": {
+        "email_template": "value_reinforcement",
+        "content_focus": "use_case_specific_based_on_industry",
+        "include_case_study": true,
+        "offer_type": "guided_demo_or_webinar",
+        "timing": "within_24_hours"
+      },
+      "secondary_actions": [
+        "trigger_in_app_tooltip_for_unused_features",
+        "create_crm_opportunity_stage_evaluation",
+        "schedule_check_in_email_day_plus_3",
+        "if_team_invites_zero_send_collaboration_prompt"
+      ]
+    },
+    "low_intent": {
+      "primary_action": "send_reengagement_campaign",
+      "details": {
+        "email_template": "we_miss_you",
+        "content_focus": "quick_win_tutorial",
+        "offer_type": "extended_trial_7_days",
+        "include_video_walkthrough": true,
+        "timing": "immediate"
+      },
+      "secondary_actions": [
+        "trigger_in_app_checklist_on_next_login",
+        "create_crm_task_for_manual_outreach",
+        "send_push_notification_if_mobile_app_installed"
+      ]
+    },
+    "risky": {
+      "primary_action": "send_last_chance_email",
+      "details": {
+        "email_template": "trial_expiring_final",
+        "content_focus": "what_you_are_missing",
+        "offer_type": "extended_trial_14_days_with_personal_onboarding",
+        "include_competitor_comparison": true,
+        "timing": "immediate"
+      },
+      "secondary_actions": [
+        "create_crm_opportunity_stage_closed_lost_if_no_response_in_5_days",
+        "add_to_win_back_drip_campaign_30_day",
+        "log_churn_reason_survey_request"
+      ]
+    }
+  },
+
+  "special_rules": {
+    "enterprise_override": {
+      "condition": "company_size >= 200",
+      "action": "always_notify_sales_team_regardless_of_score",
+      "note": "High-value accounts get human attention even at low scores"
+    },
+    "power_user_solo": {
+      "condition": "logins >= 15 AND team_members_invited == 0",
+      "action": "send_team_collaboration_prompt",
+      "note": "Highly engaged individual users who haven't invited teammates - conversion risk without team buy-in"
+    },
+    "price_sensitive_high_intent": {
+      "condition": "score >= 60 AND discount_code_attempted == true",
+      "action": "offer_annual_discount_10_percent",
+      "note": "Engaged users who tried discount codes respond well to annual billing incentives"
+    },
+    "feature_friction": {
+      "condition": "support_tickets >= 3 AND features_activated_count >= 4",
+      "action": "assign_dedicated_csm_for_trial",
+      "note": "Engaged but struggling users need hands-on support to convert"
+    }
+  }
+}

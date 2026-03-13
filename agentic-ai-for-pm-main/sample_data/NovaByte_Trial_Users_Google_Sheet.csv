@@ -1,0 +1,11 @@
+id,name,email,company,company_size,industry,role,trial_day,logins,projects_created,team_members_invited,features_activated,support_tickets,pricing_page_visits,payment_method_added,session_duration_avg_min,last_login_days_ago,source_channel
+TU-001,Priya Sharma,priya@finleap.com,FinLeap Technologies,35,Fintech,Engineering Manager,7,11,4,6,project_creation | team_invite | jira_integration | dashboard_views,0,2,FALSE,22,0,organic
+TU-002,Marcus Rivera,marcus@freelance.com,Marcus Rivera Freelance,1,Freelance Development,Freelance Developer,10,3,1,0,task_boards,0,0,FALSE,8,4,product_hunt
+TU-003,Sarah Chen,sarah@medcore.com,MedCore Health,800,Healthcare,VP of Engineering,3,2,1,2,project_creation | team_invite,1,0,FALSE,15,1,linkedin_ads
+TU-004,Raj Patel,raj@shopstream.com,ShopStream,120,E-commerce,Team Lead,12,14,3,8,project_creation | team_invite | analytics_dashboards | jira_integration | file_sharing | automations,1,3,FALSE,28,0,organic
+TU-005,Chen Wei,chen@globex.com,Globex Corp,2000,Enterprise Technology,Junior Developer,5,5,1,0,task_boards | settings_explored | integrations_browsed,0,0,FALSE,12,1,blog_post
+TU-006,Emily Nakamura,emily@greenleaf.com,GreenLeaf Organics,60,Food & Beverage,Co-Founder,10,11,4,3,task_boards | file_sharing | time_tracking | automations,1,4,TRUE,30,0,referral
+TU-007,David Okafor,david@swiftlogistics.com,Swift Logistics Inc.,200,Logistics & Supply Chain,Head of Operations,13,3,1,1,task_boards | gantt_charts,0,1,FALSE,12,5,google_organic
+TU-008,Lisa Andersson,lisa@nordiccreative.com,Nordic Creative Studio,25,Creative Agency,Studio Director,7,10,3,5,task_boards | file_sharing | time_tracking | client_portal | reporting_dashboards,1,6,FALSE,35,0,capterra
+TU-009,James Whitfield,james@whitfield.com,Whitfield & Associates,10,Legal Services,Managing Partner,14,1,0,0,,0,0,FALSE,3,12,google_ads
+TU-010,Anika Rossi,anika@healthbridge.com,HealthBridge Analytics,150,Healthcare Technology,Product Manager,8,9,2,7,task_boards | reporting_dashboards | integrations | automations | resource_allocation,2,3,TRUE,28,1,linkedin_organic

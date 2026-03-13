@@ -1,0 +1,222 @@
+[
+  {
+    "id": "TU-001",
+    "name": "Priya Sharma",
+    "company": "UrbanGrid Designs",
+    "company_size": 45,
+    "industry": "Architecture & Design",
+    "role": "Operations Manager",
+    "trial_day": 9,
+    "logins": 14,
+    "projects_created": 3,
+    "team_members_invited": 4,
+    "features_activated": ["task_boards", "time_tracking", "file_sharing", "gantt_charts", "integrations"],
+    "support_tickets": 0,
+    "billing_signals": {
+      "pricing_page_visits": 3,
+      "payment_method_added": true,
+      "discount_code_attempted": false
+    },
+    "session_duration_avg_min": 38,
+    "last_login_days_ago": 0,
+    "source_channel": "google_ads"
+  },
+  {
+    "id": "TU-002",
+    "name": "Marcus Johnson",
+    "company": "BrightLoop Media",
+    "company_size": 120,
+    "industry": "Digital Marketing",
+    "role": "VP of Marketing",
+    "trial_day": 12,
+    "logins": 2,
+    "projects_created": 1,
+    "team_members_invited": 0,
+    "features_activated": ["task_boards"],
+    "support_tickets": 1,
+    "billing_signals": {
+      "pricing_page_visits": 0,
+      "payment_method_added": false,
+      "discount_code_attempted": false
+    },
+    "session_duration_avg_min": 7,
+    "last_login_days_ago": 8,
+    "source_channel": "linkedin_ads"
+  },
+  {
+    "id": "TU-003",
+    "name": "Sarah Chen",
+    "company": "Pinnacle Consulting Group",
+    "company_size": 300,
+    "industry": "Management Consulting",
+    "role": "Senior Project Manager",
+    "trial_day": 6,
+    "logins": 8,
+    "projects_created": 2,
+    "team_members_invited": 6,
+    "features_activated": ["task_boards", "time_tracking", "reporting_dashboards", "resource_allocation"],
+    "support_tickets": 2,
+    "billing_signals": {
+      "pricing_page_visits": 5,
+      "payment_method_added": false,
+      "discount_code_attempted": true
+    },
+    "session_duration_avg_min": 25,
+    "last_login_days_ago": 1,
+    "source_channel": "g2_review_site"
+  },
+  {
+    "id": "TU-004",
+    "name": "Raj Patel",
+    "company": "Raj Patel Freelance",
+    "company_size": 1,
+    "industry": "Freelance Development",
+    "role": "Freelance Developer",
+    "trial_day": 11,
+    "logins": 18,
+    "projects_created": 5,
+    "team_members_invited": 0,
+    "features_activated": ["task_boards", "time_tracking", "file_sharing", "api_access", "automations", "integrations"],
+    "support_tickets": 3,
+    "billing_signals": {
+      "pricing_page_visits": 1,
+      "payment_method_added": false,
+      "discount_code_attempted": true
+    },
+    "session_duration_avg_min": 52,
+    "last_login_days_ago": 0,
+    "source_channel": "product_hunt"
+  },
+  {
+    "id": "TU-005",
+    "name": "Chen Wei",
+    "company": "TechScale Solutions",
+    "company_size": 800,
+    "industry": "Enterprise Software",
+    "role": "IT Director",
+    "trial_day": 4,
+    "logins": 5,
+    "projects_created": 1,
+    "team_members_invited": 12,
+    "features_activated": ["task_boards", "sso_setup", "admin_console", "audit_logs"],
+    "support_tickets": 4,
+    "billing_signals": {
+      "pricing_page_visits": 2,
+      "payment_method_added": false,
+      "discount_code_attempted": false
+    },
+    "session_duration_avg_min": 20,
+    "last_login_days_ago": 1,
+    "source_channel": "sales_outbound"
+  },
+  {
+    "id": "TU-006",
+    "name": "Emily Nakamura",
+    "company": "GreenLeaf Organics",
+    "company_size": 60,
+    "industry": "Food & Beverage",
+    "role": "Co-Founder",
+    "trial_day": 10,
+    "logins": 11,
+    "projects_created": 4,
+    "team_members_invited": 3,
+    "features_activated": ["task_boards", "file_sharing", "time_tracking", "automations"],
+    "support_tickets": 1,
+    "billing_signals": {
+      "pricing_page_visits": 4,
+      "payment_method_added": true,
+      "discount_code_attempted": false
+    },
+    "session_duration_avg_min": 30,
+    "last_login_days_ago": 0,
+    "source_channel": "referral"
+  },
+  {
+    "id": "TU-007",
+    "name": "David Okafor",
+    "company": "Swift Logistics Inc.",
+    "company_size": 200,
+    "industry": "Logistics & Supply Chain",
+    "role": "Head of Operations",
+    "trial_day": 13,
+    "logins": 3,
+    "projects_created": 1,
+    "team_members_invited": 1,
+    "features_activated": ["task_boards", "gantt_charts"],
+    "support_tickets": 0,
+    "billing_signals": {
+      "pricing_page_visits": 1,
+      "payment_method_added": false,
+      "discount_code_attempted": false
+    },
+    "session_duration_avg_min": 12,
+    "last_login_days_ago": 5,
+    "source_channel": "google_organic"
+  },
+  {
+    "id": "TU-008",
+    "name": "Lisa Andersson",
+    "company": "Nordic Creative Studio",
+    "company_size": 25,
+    "industry": "Creative Agency",
+    "role": "Studio Director",
+    "trial_day": 7,
+    "logins": 10,
+    "projects_created": 3,
+    "team_members_invited": 5,
+    "features_activated": ["task_boards", "file_sharing", "time_tracking", "client_portal", "reporting_dashboards"],
+    "support_tickets": 1,
+    "billing_signals": {
+      "pricing_page_visits": 6,
+      "payment_method_added": false,
+      "discount_code_attempted": true
+    },
+    "session_duration_avg_min": 35,
+    "last_login_days_ago": 0,
+    "source_channel": "capterra"
+  },
+  {
+    "id": "TU-009",
+    "name": "James Whitfield",
+    "company": "Whitfield & Associates",
+    "company_size": 10,
+    "industry": "Legal Services",
+    "role": "Managing Partner",
+    "trial_day": 14,
+    "logins": 1,
+    "projects_created": 0,
+    "team_members_invited": 0,
+    "features_activated": [],
+    "support_tickets": 0,
+    "billing_signals": {
+      "pricing_page_visits": 0,
+      "payment_method_added": false,
+      "discount_code_attempted": false
+    },
+    "session_duration_avg_min": 3,
+    "last_login_days_ago": 12,
+    "source_channel": "google_ads"
+  },
+  {
+    "id": "TU-010",
+    "name": "Anika Rossi",
+    "company": "HealthBridge Analytics",
+    "company_size": 150,
+    "industry": "Healthcare Technology",
+    "role": "Product Manager",
+    "trial_day": 8,
+    "logins": 9,
+    "projects_created": 2,
+    "team_members_invited": 7,
+    "features_activated": ["task_boards", "reporting_dashboards", "integrations", "automations", "resource_allocation"],
+    "support_tickets": 2,
+    "billing_signals": {
+      "pricing_page_visits": 3,
+      "payment_method_added": true,
+      "discount_code_attempted": false
+    },
+    "session_duration_avg_min": 28,
+    "last_login_days_ago": 1,
+    "source_channel": "linkedin_organic"
+  }
+]

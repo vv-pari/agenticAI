@@ -1,0 +1,201 @@
+user_id,signup_date,company_size,industry,role,source_channel,day_1_login,day_3_login,day_7_login,day_14_login,projects_created,team_members_invited,integrations_setup,pricing_page_visited,payment_method_added,converted,conversion_date
+NB-10001,2026-01-03,1-10,Technology,Developer,organic,yes,no,no,no,1,0,0,no,no,no,
+NB-10002,2026-01-04,11-50,Healthcare,Product Manager,referral,yes,yes,yes,yes,3,4,2,yes,yes,yes,2026-01-15
+NB-10003,2026-01-04,1-10,Finance,Founder,paid,yes,no,no,no,0,0,0,no,no,no,
+NB-10004,2026-01-05,51-200,Technology,Engineering Manager,organic,yes,yes,yes,yes,4,5,2,yes,yes,yes,2026-01-18
+NB-10005,2026-01-05,1-10,Education,Project Manager,organic,yes,yes,no,no,2,1,0,yes,no,no,
+NB-10006,2026-01-06,11-50,Retail,Team Lead,referral,yes,yes,yes,yes,3,3,1,yes,yes,yes,2026-01-14
+NB-10007,2026-01-06,1000+,Finance,CTO,partner,yes,yes,yes,no,2,2,1,yes,no,no,
+NB-10008,2026-01-07,1-10,Technology,Developer,paid,no,no,no,no,0,0,0,no,no,no,
+NB-10009,2026-01-07,1-10,Media,Founder,organic,yes,no,no,no,1,0,0,no,no,no,
+NB-10010,2026-01-08,11-50,Consulting,Product Manager,organic,yes,yes,yes,yes,3,4,1,yes,yes,yes,2026-01-20
+NB-10011,2026-01-08,201-500,Technology,VP Engineering,paid,yes,yes,no,no,1,1,0,yes,no,no,
+NB-10012,2026-01-09,1-10,Healthcare,Project Manager,organic,yes,no,no,no,0,0,0,no,no,no,
+NB-10013,2026-01-09,11-50,Technology,Engineering Manager,referral,yes,yes,yes,yes,4,5,2,yes,yes,yes,2026-01-22
+NB-10014,2026-01-10,1-10,Education,Founder,paid,yes,yes,no,no,1,0,0,no,no,no,
+NB-10015,2026-01-10,51-200,Finance,CTO,organic,yes,yes,yes,no,2,2,1,yes,no,no,
+NB-10016,2026-01-11,1-10,Retail,Developer,organic,yes,no,no,no,1,0,0,no,no,no,
+NB-10017,2026-01-11,11-50,Technology,Product Manager,referral,yes,yes,yes,yes,3,3,2,yes,yes,yes,2026-01-19
+NB-10018,2026-01-12,501-1000,Manufacturing,Operations Manager,partner,yes,yes,yes,no,2,2,0,yes,no,no,
+NB-10019,2026-01-12,1-10,Media,Designer,paid,yes,no,no,no,0,0,0,no,no,no,
+NB-10020,2026-01-13,1-10,Technology,Developer,organic,yes,yes,no,no,2,1,0,no,no,no,
+NB-10021,2026-01-13,11-50,Consulting,Team Lead,organic,yes,yes,yes,yes,3,4,1,yes,yes,yes,2026-01-25
+NB-10022,2026-01-14,1-10,Finance,Founder,paid,no,no,no,no,0,0,0,no,no,no,
+NB-10023,2026-01-14,51-200,Healthcare,Product Manager,referral,yes,yes,yes,yes,4,3,2,yes,yes,yes,2026-01-26
+NB-10024,2026-01-15,1-10,Education,Project Manager,organic,yes,no,no,no,1,0,0,no,no,no,
+NB-10025,2026-01-15,11-50,Technology,Engineering Manager,organic,yes,yes,yes,no,2,2,1,yes,no,no,
+NB-10026,2026-01-16,1-10,Retail,Developer,paid,yes,no,no,no,0,0,0,no,no,no,
+NB-10027,2026-01-16,11-50,Media,CTO,referral,yes,yes,yes,yes,5,4,2,yes,yes,yes,2026-01-28
+NB-10028,2026-01-17,201-500,Technology,VP Engineering,organic,yes,yes,yes,no,2,1,1,yes,no,no,
+NB-10029,2026-01-17,1-10,Logistics,Founder,organic,yes,no,no,no,1,0,0,no,no,no,
+NB-10030,2026-01-18,1-10,Technology,Developer,paid,yes,yes,no,no,1,0,0,no,no,no,
+NB-10031,2026-01-18,51-200,Finance,Product Manager,organic,yes,yes,yes,yes,3,3,1,yes,yes,yes,2026-01-30
+NB-10032,2026-01-19,1-10,Healthcare,Designer,organic,yes,no,no,no,0,0,0,no,no,no,
+NB-10033,2026-01-19,11-50,Education,Team Lead,referral,yes,yes,yes,yes,3,5,1,yes,yes,yes,2026-01-29
+NB-10034,2026-01-20,1000+,Technology,CTO,partner,yes,yes,no,no,1,1,0,yes,no,no,
+NB-10035,2026-01-20,1-10,Consulting,Founder,paid,yes,no,no,no,0,0,0,no,no,no,
+NB-10036,2026-01-21,1-10,Manufacturing,Project Manager,organic,yes,no,no,no,1,0,0,no,no,no,
+NB-10037,2026-01-21,11-50,Technology,Engineering Manager,organic,yes,yes,yes,yes,4,4,2,yes,yes,yes,2026-02-02
+NB-10038,2026-01-22,1-10,Retail,Developer,paid,no,no,no,no,0,0,0,no,no,no,
+NB-10039,2026-01-22,51-200,Media,Product Manager,referral,yes,yes,yes,no,2,2,1,yes,no,no,
+NB-10040,2026-01-23,1-10,Finance,Founder,organic,yes,yes,no,no,1,1,0,no,no,no,
+NB-10041,2026-01-23,11-50,Technology,Team Lead,organic,yes,yes,yes,yes,3,3,1,yes,no,no,
+NB-10042,2026-01-24,201-500,Healthcare,VP Engineering,paid,yes,yes,no,no,1,1,0,yes,no,no,
+NB-10043,2026-01-24,1-10,Education,Designer,organic,yes,no,no,no,0,0,0,no,no,no,
+NB-10044,2026-01-25,1-10,Technology,Developer,paid,yes,no,no,no,1,0,0,no,no,no,
+NB-10045,2026-01-25,11-50,Logistics,Product Manager,referral,yes,yes,yes,yes,3,4,2,yes,yes,yes,2026-02-04
+NB-10046,2026-01-26,1-10,Consulting,Founder,organic,yes,no,no,no,0,0,0,no,no,no,
+NB-10047,2026-01-26,51-200,Technology,Engineering Manager,organic,yes,yes,yes,yes,4,3,2,yes,yes,yes,2026-02-06
+NB-10048,2026-01-27,1-10,Finance,Project Manager,paid,yes,yes,no,no,1,0,0,no,no,no,
+NB-10049,2026-01-27,11-50,Healthcare,CTO,referral,yes,yes,yes,no,2,2,1,yes,no,no,
+NB-10050,2026-01-28,501-1000,Technology,VP Engineering,partner,yes,yes,no,no,1,1,0,yes,no,no,
+NB-10051,2026-01-28,1-10,Retail,Developer,organic,yes,no,no,no,0,0,0,no,no,no,
+NB-10052,2026-01-29,1-10,Media,Founder,paid,no,no,no,no,0,0,0,no,no,no,
+NB-10053,2026-01-29,11-50,Technology,Product Manager,organic,yes,yes,yes,yes,3,3,1,yes,yes,yes,2026-02-08
+NB-10054,2026-01-30,1-10,Education,Designer,organic,yes,no,no,no,1,0,0,no,no,no,
+NB-10055,2026-01-30,11-50,Consulting,Team Lead,referral,yes,yes,yes,yes,4,5,2,yes,yes,yes,2026-02-09
+NB-10056,2026-01-31,1-10,Technology,Developer,paid,yes,yes,no,no,1,0,0,no,no,no,
+NB-10057,2026-01-31,51-200,Finance,Product Manager,organic,yes,yes,yes,no,2,2,1,yes,no,no,
+NB-10058,2026-02-01,1-10,Healthcare,Founder,organic,yes,no,no,no,0,0,0,no,no,no,
+NB-10059,2026-02-01,11-50,Technology,Engineering Manager,referral,yes,yes,yes,yes,3,4,2,yes,yes,yes,2026-02-12
+NB-10060,2026-02-02,201-500,Retail,CTO,paid,yes,yes,yes,no,2,1,0,yes,no,no,
+NB-10061,2026-02-02,1-10,Manufacturing,Project Manager,organic,yes,no,no,no,1,0,0,no,no,no,
+NB-10062,2026-02-03,1-10,Technology,Developer,paid,yes,no,no,no,0,0,0,no,no,no,
+NB-10063,2026-02-03,11-50,Media,Product Manager,organic,yes,yes,yes,yes,3,3,1,yes,no,no,
+NB-10064,2026-02-04,1-10,Finance,Founder,organic,yes,yes,no,no,1,1,0,no,no,no,
+NB-10065,2026-02-04,51-200,Education,Team Lead,referral,yes,yes,yes,yes,4,4,2,yes,yes,yes,2026-02-15
+NB-10066,2026-02-05,1-10,Technology,Designer,paid,yes,no,no,no,0,0,0,no,no,no,
+NB-10067,2026-02-05,1000+,Consulting,VP Engineering,partner,yes,yes,no,no,1,2,0,yes,no,no,
+NB-10068,2026-02-06,1-10,Healthcare,Developer,organic,yes,no,no,no,1,0,0,no,no,no,
+NB-10069,2026-02-06,11-50,Technology,Product Manager,referral,yes,yes,yes,yes,3,5,2,yes,yes,yes,2026-02-17
+NB-10070,2026-02-07,1-10,Logistics,Founder,paid,no,no,no,no,0,0,0,no,no,no,
+NB-10071,2026-02-07,11-50,Finance,Engineering Manager,organic,yes,yes,yes,no,2,2,1,yes,no,no,
+NB-10072,2026-02-08,1-10,Technology,Project Manager,organic,yes,no,no,no,0,0,0,no,no,no,
+NB-10073,2026-02-08,51-200,Retail,CTO,organic,yes,yes,yes,yes,3,3,1,yes,yes,yes,2026-02-19
+NB-10074,2026-02-09,1-10,Education,Developer,paid,yes,yes,no,no,1,0,0,no,no,no,
+NB-10075,2026-02-09,11-50,Technology,Team Lead,referral,yes,yes,yes,yes,4,4,1,yes,yes,yes,2026-02-18
+NB-10076,2026-02-10,201-500,Media,Product Manager,organic,yes,yes,no,no,1,1,0,yes,no,no,
+NB-10077,2026-02-10,1-10,Manufacturing,Founder,paid,yes,no,no,no,0,0,0,no,no,no,
+NB-10078,2026-02-11,1-10,Technology,Designer,organic,yes,no,no,no,1,0,0,no,no,no,
+NB-10079,2026-02-11,11-50,Consulting,Product Manager,organic,yes,yes,yes,yes,3,3,2,yes,no,no,
+NB-10080,2026-02-12,1-10,Healthcare,Developer,paid,yes,no,no,no,0,0,0,no,no,no,
+NB-10081,2026-02-12,501-1000,Finance,VP Engineering,partner,yes,yes,yes,no,2,1,1,yes,no,no,
+NB-10082,2026-02-13,1-10,Technology,Founder,organic,yes,yes,no,no,2,1,0,no,no,no,
+NB-10083,2026-02-13,11-50,Education,Engineering Manager,referral,yes,yes,yes,yes,3,4,2,yes,yes,yes,2026-02-22
+NB-10084,2026-02-14,1-10,Retail,Project Manager,paid,yes,no,no,no,0,0,0,no,no,no,
+NB-10085,2026-02-14,51-200,Technology,Product Manager,organic,yes,yes,yes,yes,4,3,1,yes,yes,yes,2026-02-25
+NB-10086,2026-02-15,1-10,Media,Developer,organic,yes,no,no,no,1,0,0,no,no,no,
+NB-10087,2026-02-15,11-50,Logistics,CTO,referral,yes,yes,yes,no,2,2,1,yes,no,no,
+NB-10088,2026-02-16,1-10,Finance,Founder,paid,no,no,no,no,0,0,0,no,no,no,
+NB-10089,2026-02-16,1-10,Technology,Designer,organic,yes,no,no,no,0,0,0,no,no,no,
+NB-10090,2026-02-17,11-50,Healthcare,Team Lead,organic,yes,yes,yes,yes,3,3,1,yes,yes,yes,2026-02-27
+NB-10091,2026-02-17,1-10,Consulting,Developer,paid,yes,yes,no,no,1,0,0,no,no,no,
+NB-10092,2026-02-18,51-200,Technology,Product Manager,referral,yes,yes,yes,yes,4,4,2,yes,yes,yes,2026-02-28
+NB-10093,2026-02-18,1-10,Education,Founder,organic,yes,no,no,no,0,0,0,no,no,no,
+NB-10094,2026-02-19,201-500,Retail,Engineering Manager,paid,yes,yes,no,no,1,1,0,yes,no,no,
+NB-10095,2026-02-19,1-10,Technology,Project Manager,organic,yes,no,no,no,1,0,0,no,no,no,
+NB-10096,2026-02-20,11-50,Manufacturing,Product Manager,referral,yes,yes,yes,yes,3,5,1,yes,yes,yes,2026-03-01
+NB-10097,2026-02-20,1-10,Media,Developer,paid,yes,no,no,no,0,0,0,no,no,no,
+NB-10098,2026-02-21,1-10,Finance,Founder,organic,yes,yes,no,no,1,0,0,no,no,no,
+NB-10099,2026-02-21,1000+,Technology,CTO,partner,yes,yes,yes,no,2,2,1,yes,no,no,
+NB-10100,2026-02-22,1-10,Healthcare,Designer,paid,yes,no,no,no,0,0,0,no,no,no,
+NB-10101,2026-01-05,1-10,Technology,Developer,organic,yes,no,no,no,1,0,0,no,no,no,
+NB-10102,2026-01-06,11-50,Finance,Product Manager,organic,yes,yes,yes,yes,3,3,2,yes,no,no,
+NB-10103,2026-01-07,1-10,Education,Founder,paid,yes,no,no,no,0,0,0,no,no,no,
+NB-10104,2026-01-08,51-200,Technology,Engineering Manager,referral,yes,yes,yes,yes,4,4,2,yes,yes,yes,2026-01-19
+NB-10105,2026-01-09,1-10,Retail,Project Manager,organic,yes,yes,no,no,1,1,0,no,no,no,
+NB-10106,2026-01-10,11-50,Healthcare,Team Lead,referral,yes,yes,yes,yes,3,4,1,yes,yes,yes,2026-01-21
+NB-10107,2026-01-11,1-10,Media,Developer,paid,no,no,no,no,0,0,0,no,no,no,
+NB-10108,2026-01-12,1-10,Technology,Founder,organic,yes,no,no,no,1,0,0,no,no,no,
+NB-10109,2026-01-13,201-500,Consulting,VP Engineering,organic,yes,yes,yes,no,2,1,0,yes,no,no,
+NB-10110,2026-01-14,1-10,Logistics,Designer,paid,yes,no,no,no,0,0,0,no,no,no,
+NB-10111,2026-01-15,11-50,Technology,Product Manager,referral,yes,yes,yes,yes,5,5,2,yes,yes,yes,2026-01-26
+NB-10112,2026-01-16,1-10,Finance,Developer,organic,yes,yes,no,no,1,0,0,no,no,no,
+NB-10113,2026-01-17,1-10,Healthcare,Founder,paid,yes,no,no,no,0,0,0,no,no,no,
+NB-10114,2026-01-18,51-200,Education,Product Manager,organic,yes,yes,yes,yes,3,2,1,yes,no,no,
+NB-10115,2026-01-19,1-10,Technology,Project Manager,organic,yes,no,no,no,0,0,0,no,no,no,
+NB-10116,2026-01-20,11-50,Retail,Engineering Manager,organic,yes,yes,yes,no,2,2,1,yes,no,no,
+NB-10117,2026-01-21,1-10,Manufacturing,Developer,paid,yes,no,no,no,1,0,0,no,no,no,
+NB-10118,2026-01-22,501-1000,Technology,CTO,partner,yes,yes,no,no,1,1,0,yes,no,no,
+NB-10119,2026-01-23,1-10,Media,Founder,organic,yes,no,no,no,0,0,0,no,no,no,
+NB-10120,2026-01-24,11-50,Finance,Product Manager,referral,yes,yes,yes,yes,3,3,2,yes,yes,yes,2026-02-01
+NB-10121,2026-01-25,1-10,Consulting,Designer,paid,yes,yes,no,no,1,0,0,no,no,no,
+NB-10122,2026-01-26,1-10,Technology,Developer,organic,yes,no,no,no,0,0,0,no,no,no,
+NB-10123,2026-01-27,51-200,Healthcare,Team Lead,organic,yes,yes,yes,no,2,2,1,yes,no,no,
+NB-10124,2026-01-28,1-10,Education,Founder,paid,no,no,no,no,0,0,0,no,no,no,
+NB-10125,2026-01-29,11-50,Technology,Product Manager,organic,yes,yes,yes,yes,4,4,1,yes,yes,yes,2026-02-07
+NB-10126,2026-01-30,1-10,Retail,Developer,organic,yes,no,no,no,1,0,0,no,no,no,
+NB-10127,2026-01-31,201-500,Logistics,VP Engineering,paid,yes,yes,no,no,1,1,0,yes,no,no,
+NB-10128,2026-02-01,1-10,Technology,Project Manager,paid,yes,no,no,no,0,0,0,no,no,no,
+NB-10129,2026-02-02,11-50,Finance,Engineering Manager,referral,yes,yes,yes,yes,3,5,2,yes,yes,yes,2026-02-13
+NB-10130,2026-02-03,1-10,Media,Founder,organic,yes,yes,no,no,1,0,0,no,no,no,
+NB-10131,2026-02-04,1-10,Healthcare,Developer,paid,yes,no,no,no,0,0,0,no,no,no,
+NB-10132,2026-02-05,51-200,Technology,Product Manager,organic,yes,yes,yes,yes,3,3,1,yes,yes,yes,2026-02-16
+NB-10133,2026-02-06,1-10,Education,Designer,organic,yes,no,no,no,0,0,0,no,no,no,
+NB-10134,2026-02-07,11-50,Consulting,Team Lead,referral,yes,yes,yes,no,2,2,1,yes,no,no,
+NB-10135,2026-02-08,1-10,Technology,Developer,paid,yes,yes,no,no,1,0,0,no,no,no,
+NB-10136,2026-02-09,1000+,Retail,CTO,partner,yes,yes,no,no,1,1,0,yes,no,no,
+NB-10137,2026-02-10,1-10,Manufacturing,Founder,organic,yes,no,no,no,0,0,0,no,no,no,
+NB-10138,2026-02-11,11-50,Technology,Product Manager,organic,yes,yes,yes,yes,4,3,2,yes,no,no,
+NB-10139,2026-02-12,1-10,Finance,Project Manager,paid,yes,no,no,no,0,0,0,no,no,no,
+NB-10140,2026-02-13,51-200,Healthcare,Engineering Manager,referral,yes,yes,yes,yes,3,4,2,yes,yes,yes,2026-02-24
+NB-10141,2026-02-14,1-10,Technology,Developer,organic,yes,no,no,no,1,0,0,no,no,no,
+NB-10142,2026-02-15,11-50,Education,Team Lead,organic,yes,yes,yes,yes,3,3,1,yes,yes,yes,2026-02-26
+NB-10143,2026-02-16,1-10,Media,Founder,paid,yes,no,no,no,0,0,0,no,no,no,
+NB-10144,2026-02-17,201-500,Technology,VP Engineering,organic,yes,yes,yes,no,2,1,1,yes,no,no,
+NB-10145,2026-02-18,1-10,Retail,Designer,organic,yes,no,no,no,0,0,0,no,no,no,
+NB-10146,2026-02-19,11-50,Logistics,Product Manager,referral,yes,yes,yes,yes,3,4,2,yes,yes,yes,2026-02-28
+NB-10147,2026-02-20,1-10,Consulting,Developer,paid,yes,yes,no,no,1,0,0,no,no,no,
+NB-10148,2026-02-21,1-10,Technology,Founder,organic,yes,no,no,no,0,0,0,no,no,no,
+NB-10149,2026-02-22,501-1000,Finance,CTO,partner,yes,yes,yes,no,2,2,0,yes,no,no,
+NB-10150,2026-02-23,1-10,Healthcare,Project Manager,paid,yes,no,no,no,0,0,0,no,no,no,
+NB-10151,2026-01-06,11-50,Technology,Product Manager,organic,yes,yes,yes,no,2,2,1,yes,no,no,
+NB-10152,2026-01-08,1-10,Education,Developer,paid,yes,no,no,no,1,0,0,no,no,no,
+NB-10153,2026-01-10,11-50,Retail,Team Lead,referral,yes,yes,yes,yes,3,4,1,yes,yes,yes,2026-01-22
+NB-10154,2026-01-12,1-10,Technology,Founder,organic,yes,yes,no,no,1,1,0,no,no,no,
+NB-10155,2026-01-14,51-200,Consulting,Product Manager,organic,yes,yes,yes,yes,4,3,2,yes,yes,yes,2026-01-25
+NB-10156,2026-01-16,1-10,Finance,Designer,paid,yes,no,no,no,0,0,0,no,no,no,
+NB-10157,2026-01-18,1-10,Healthcare,Developer,organic,yes,no,no,no,0,0,0,no,no,no,
+NB-10158,2026-01-20,11-50,Technology,Engineering Manager,referral,yes,yes,yes,yes,3,5,2,yes,yes,yes,2026-01-31
+NB-10159,2026-01-22,1-10,Media,Founder,paid,no,no,no,no,0,0,0,no,no,no,
+NB-10160,2026-01-24,201-500,Education,VP Engineering,organic,yes,yes,no,no,1,1,0,yes,no,no,
+NB-10161,2026-01-26,1-10,Technology,Project Manager,organic,yes,no,no,no,1,0,0,no,no,no,
+NB-10162,2026-01-28,11-50,Logistics,Product Manager,organic,yes,yes,yes,yes,3,3,1,yes,no,no,
+NB-10163,2026-01-30,1-10,Retail,Developer,paid,yes,no,no,no,0,0,0,no,no,no,
+NB-10164,2026-02-01,1-10,Manufacturing,Founder,organic,yes,yes,no,no,1,0,0,no,no,no,
+NB-10165,2026-02-03,51-200,Technology,Product Manager,referral,yes,yes,yes,yes,4,4,2,yes,yes,yes,2026-02-14
+NB-10166,2026-02-05,1-10,Finance,Designer,paid,yes,no,no,no,0,0,0,no,no,no,
+NB-10167,2026-02-07,11-50,Healthcare,Team Lead,organic,yes,yes,yes,no,2,2,1,yes,no,no,
+NB-10168,2026-02-09,1-10,Consulting,Developer,organic,yes,no,no,no,0,0,0,no,no,no,
+NB-10169,2026-02-11,1000+,Technology,CTO,partner,yes,yes,no,no,1,2,0,yes,no,no,
+NB-10170,2026-02-13,1-10,Education,Founder,paid,yes,no,no,no,0,0,0,no,no,no,
+NB-10171,2026-02-15,11-50,Retail,Product Manager,referral,yes,yes,yes,yes,3,4,2,yes,yes,yes,2026-02-25
+NB-10172,2026-02-17,1-10,Technology,Project Manager,organic,yes,yes,no,no,1,0,0,no,no,no,
+NB-10173,2026-02-19,51-200,Media,Engineering Manager,organic,yes,yes,yes,yes,3,3,1,yes,no,no,
+NB-10174,2026-02-21,1-10,Finance,Developer,paid,yes,no,no,no,0,0,0,no,no,no,
+NB-10175,2026-02-23,11-50,Technology,Team Lead,organic,yes,yes,yes,no,2,2,1,yes,no,no,
+NB-10176,2026-01-07,201-500,Healthcare,VP Engineering,paid,yes,yes,no,no,1,1,0,yes,no,no,
+NB-10177,2026-01-11,1-10,Technology,Founder,organic,yes,no,no,no,1,0,0,no,no,no,
+NB-10178,2026-01-15,11-50,Education,Product Manager,referral,yes,yes,yes,yes,3,3,2,yes,yes,yes,2026-01-27
+NB-10179,2026-01-19,1-10,Retail,Developer,paid,yes,yes,no,no,1,0,0,no,no,no,
+NB-10180,2026-01-23,501-1000,Technology,CTO,partner,yes,yes,yes,no,2,2,1,yes,no,no,
+NB-10181,2026-01-27,1-10,Consulting,Designer,organic,yes,no,no,no,0,0,0,no,no,no,
+NB-10182,2026-01-31,11-50,Finance,Engineering Manager,organic,yes,yes,yes,yes,4,4,1,yes,yes,yes,2026-02-10
+NB-10183,2026-02-04,1-10,Media,Founder,paid,no,no,no,no,0,0,0,no,no,no,
+NB-10184,2026-02-08,1-10,Technology,Project Manager,organic,yes,no,no,no,0,0,0,no,no,no,
+NB-10185,2026-02-12,51-200,Healthcare,Product Manager,organic,yes,yes,yes,yes,3,3,1,yes,yes,yes,2026-02-23
+NB-10186,2026-02-16,1-10,Education,Developer,paid,yes,no,no,no,1,0,0,no,no,no,
+NB-10187,2026-02-20,11-50,Technology,Team Lead,referral,yes,yes,yes,yes,3,5,2,yes,yes,yes,2026-03-02
+NB-10188,2026-02-24,1-10,Logistics,Founder,organic,yes,yes,no,no,1,0,0,no,no,no,
+NB-10189,2026-01-09,1-10,Technology,Developer,organic,yes,no,no,no,0,0,0,no,no,no,
+NB-10190,2026-01-17,11-50,Manufacturing,Product Manager,organic,yes,yes,yes,no,2,2,1,yes,no,no,
+NB-10191,2026-01-25,1-10,Finance,Founder,paid,yes,no,no,no,0,0,0,no,no,no,
+NB-10192,2026-02-02,51-200,Technology,Engineering Manager,referral,yes,yes,yes,yes,4,3,2,yes,yes,yes,2026-02-13
+NB-10193,2026-02-10,1-10,Healthcare,Designer,organic,yes,no,no,no,0,0,0,no,no,no,
+NB-10194,2026-02-18,11-50,Education,Team Lead,organic,yes,yes,yes,yes,3,4,1,yes,no,no,
+NB-10195,2026-02-22,1-10,Retail,Developer,paid,yes,yes,no,no,1,0,0,no,no,no,
+NB-10196,2026-01-13,1-10,Technology,Founder,organic,yes,no,no,no,1,0,0,no,no,no,
+NB-10197,2026-01-21,1000+,Consulting,CTO,partner,yes,yes,yes,no,2,1,0,yes,no,no,
+NB-10198,2026-02-06,1-10,Media,Project Manager,paid,yes,no,no,no,0,0,0,no,no,no,
+NB-10199,2026-02-14,11-50,Technology,Product Manager,referral,yes,yes,yes,yes,3,4,2,yes,yes,yes,2026-02-24
+NB-10200,2026-02-22,1-10,Finance,Developer,organic,yes,yes,no,no,1,0,0,no,no,no,

@@ -1,0 +1,490 @@
+{
+  "data": {
+    "nodes": [
+      {
+        "id": "TextInput-USER",
+        "type": "genericNode",
+        "position": {"x": 100, "y": 300},
+        "data": {
+          "id": "TextInput-USER",
+          "display_name": "User Profile Input",
+          "description": "Trial user profile data for nudge generation",
+          "type": "TextInput",
+          "node": {
+            "base_classes": ["Message"],
+            "display_name": "User Profile Input",
+            "description": "Input the trial user profile to generate a conversion nudge",
+            "template": {
+              "_type": "Component",
+              "input_value": {
+                "type": "str",
+                "required": true,
+                "show": true,
+                "multiline": true,
+                "value": "Trial User Profile:\n- Name: Raj Patel\n- Company: ShopStream (120 employees, E-commerce)\n- Role: Team Lead\n- Trial Day: 12 of 14\n- Logins: 14 (daily)\n- Projects Created: 3\n- Team Members Invited: 8\n- Features Used: project creation, team invite, analytics dashboards, Jira integration, file sharing, automations\n- Support Tickets: 1 (asked about annual billing discount)\n- Pricing Page Visits: 3\n- Payment Method Added: No\n- Discount Code Attempted: Yes (expired code)\n- Avg Session Duration: 28 min\n- Last Login: Today\n- Source: Organic search\n\nContext: Raj is a power user on Day 12. His team is actively using the platform. He has shown strong buying signals (pricing page visits, discount code attempt) but hasn't converted yet. His trial expires in 2 days.",
+                "display_name": "User Profile",
+                "info": "Paste the trial user profile data here. This will be used by the Drafter agent to create a personalized nudge email."
+              }
+            },
+            "outputs": [
+              {
+                "name": "text",
+                "display_name": "Text",
+                "method": "text_response",
+                "types": ["Message"]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "OpenAIModel-DRAFTER",
+        "type": "genericNode",
+        "position": {"x": 500, "y": 200},
+        "data": {
+          "id": "OpenAIModel-DRAFTER",
+          "display_name": "Drafter Agent",
+          "description": "Drafts a personalized conversion nudge email",
+          "type": "OpenAIModel",
+          "node": {
+            "base_classes": ["Message"],
+            "display_name": "Drafter Agent",
+            "description": "Drafts a personalized conversion nudge email based on user profile",
+            "icon": "OpenAI",
+            "template": {
+              "_type": "Component",
+              "model_name": {
+                "type": "str",
+                "required": true,
+                "show": true,
+                "value": "gpt-4o-mini",
+                "display_name": "Model Name",
+                "info": "OpenAI model to use"
+              },
+              "openai_api_key": {
+                "type": "str",
+                "required": true,
+                "show": true,
+                "value": "",
+                "display_name": "OpenAI API Key",
+                "password": true,
+                "info": "Your OpenAI API key"
+              },
+              "temperature": {
+                "type": "float",
+                "required": false,
+                "show": true,
+                "value": 0.7,
+                "display_name": "Temperature",
+                "info": "Controls randomness. Higher = more creative."
+              },
+              "system_message": {
+                "type": "str",
+                "required": false,
+                "show": true,
+                "multiline": true,
+                "value": "You are a conversion specialist at NovaByte, a B2B SaaS project management platform.\n\nYour job is to draft a personalized nudge email to convert a free trial user to a paid plan.\n\nRules:\n- Be genuinely helpful, not salesy or pushy\n- Reference the user's SPECIFIC usage patterns (projects, team members, integrations, features they use)\n- Highlight value they would lose if they don't convert\n- Offer something concrete: a best practices session, a custom onboarding call, or a walkthrough of advanced features\n- Keep the email under 150 words\n- Use a warm, professional tone\n- Do NOT offer discounts, credits, or pricing promises — you are not authorized to do so\n- Do NOT create false urgency (e.g., don't say 'act now or lose everything')\n- Include a clear, low-pressure call to action\n- Sign off as 'The NovaByte Team'\n\nWrite ONLY the email. No preamble, no explanation.",
+                "display_name": "System Message",
+                "info": "Instructions for the drafter agent"
+              },
+              "input_value": {
+                "type": "str",
+                "required": true,
+                "show": true,
+                "multiline": true,
+                "value": "",
+                "display_name": "Input",
+                "input_types": ["Message"],
+                "info": "User profile data"
+              }
+            },
+            "outputs": [
+              {
+                "name": "text_output",
+                "display_name": "Draft Email",
+                "method": "text_response",
+                "types": ["Message"]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "OpenAIModel-REVIEWER",
+        "type": "genericNode",
+        "position": {"x": 900, "y": 200},
+        "data": {
+          "id": "OpenAIModel-REVIEWER",
+          "display_name": "Reviewer Agent",
+          "description": "Critiques the draft email against quality criteria",
+          "type": "OpenAIModel",
+          "node": {
+            "base_classes": ["Message"],
+            "display_name": "Reviewer Agent",
+            "description": "Reviews and critiques the draft nudge email",
+            "icon": "OpenAI",
+            "template": {
+              "_type": "Component",
+              "model_name": {
+                "type": "str",
+                "required": true,
+                "show": true,
+                "value": "gpt-4o-mini",
+                "display_name": "Model Name"
+              },
+              "openai_api_key": {
+                "type": "str",
+                "required": true,
+                "show": true,
+                "value": "",
+                "display_name": "OpenAI API Key",
+                "password": true
+              },
+              "temperature": {
+                "type": "float",
+                "required": false,
+                "show": true,
+                "value": 0.3,
+                "display_name": "Temperature",
+                "info": "Lower temperature for more consistent reviews"
+              },
+              "system_message": {
+                "type": "str",
+                "required": false,
+                "show": true,
+                "multiline": true,
+                "value": "You are a Senior Product Manager reviewing a draft conversion nudge email before it gets sent to a trial user.\n\nYou must critique the email against these criteria:\n\n1. PERSONALIZATION: Does the email reference the user's specific usage data (projects created, team members invited, features used, integrations set up)? Generic emails fail.\n\n2. TONE: Is the tone helpful and warm, or does it feel salesy/pushy? Would you be annoyed receiving this email?\n\n3. UNAUTHORIZED PROMISES: Does the email promise any discounts, credits, extended trials, or pricing changes? If so, flag it immediately — we are not authorized to make these offers.\n\n4. FALSE URGENCY: Does the email create artificial urgency (e.g., 'Your data will be deleted!' or 'Act now!')? Flag any manipulative language.\n\n5. CLARITY OF CTA: Is the call-to-action clear, specific, and low-pressure? The user should know exactly what to do next.\n\n6. LENGTH: Is the email concise (under 150 words)? Trial users are busy.\n\n7. VALUE PROPOSITION: Does the email clearly communicate what the user would GAIN by converting (not just what they'd lose)?\n\nFor each criterion, provide:\n- PASS or FAIL\n- Specific feedback with a suggested fix if FAIL\n\nEnd with an overall verdict: APPROVE, REVISE (with specific changes needed), or REJECT (with reason).\n\nBe rigorous. It is better to catch a bad email now than to damage the relationship with a potential customer.",
+                "display_name": "System Message",
+                "info": "MODIFY THIS PROMPT to change review criteria. This is where PM judgment is encoded."
+              },
+              "input_value": {
+                "type": "str",
+                "required": true,
+                "show": true,
+                "multiline": true,
+                "value": "",
+                "display_name": "Input",
+                "input_types": ["Message"],
+                "info": "Draft email to review"
+              }
+            },
+            "outputs": [
+              {
+                "name": "text_output",
+                "display_name": "Review Feedback",
+                "method": "text_response",
+                "types": ["Message"]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "Prompt-COMBINE",
+        "type": "genericNode",
+        "position": {"x": 1300, "y": 300},
+        "data": {
+          "id": "Prompt-COMBINE",
+          "display_name": "Combine for Revision",
+          "description": "Combines original draft with reviewer feedback for revision",
+          "type": "Prompt",
+          "node": {
+            "base_classes": ["Message"],
+            "display_name": "Combine for Revision",
+            "description": "Merges the original draft and reviewer feedback into a revision prompt",
+            "template": {
+              "_type": "Component",
+              "template": {
+                "type": "str",
+                "required": true,
+                "show": true,
+                "multiline": true,
+                "value": "ORIGINAL DRAFT EMAIL:\n{draft}\n\n---\n\nREVIEWER FEEDBACK:\n{feedback}\n\n---\n\nPlease revise the email based on ALL the reviewer's feedback. Apply every suggested fix. Output ONLY the revised email, nothing else.",
+                "display_name": "Template",
+                "info": "Template combining draft and feedback"
+              },
+              "draft": {
+                "type": "str",
+                "required": true,
+                "show": true,
+                "multiline": true,
+                "value": "",
+                "display_name": "Draft",
+                "input_types": ["Message"],
+                "info": "The original draft email"
+              },
+              "feedback": {
+                "type": "str",
+                "required": true,
+                "show": true,
+                "multiline": true,
+                "value": "",
+                "display_name": "Feedback",
+                "input_types": ["Message"],
+                "info": "The reviewer's feedback"
+              }
+            },
+            "outputs": [
+              {
+                "name": "prompt",
+                "display_name": "Combined Prompt",
+                "method": "build_prompt",
+                "types": ["Message"]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "OpenAIModel-REVISER",
+        "type": "genericNode",
+        "position": {"x": 1700, "y": 300},
+        "data": {
+          "id": "OpenAIModel-REVISER",
+          "display_name": "Reviser Agent",
+          "description": "Revises the email based on reviewer feedback",
+          "type": "OpenAIModel",
+          "node": {
+            "base_classes": ["Message"],
+            "display_name": "Reviser Agent",
+            "description": "Takes the original draft and reviewer feedback, produces a polished final version",
+            "icon": "OpenAI",
+            "template": {
+              "_type": "Component",
+              "model_name": {
+                "type": "str",
+                "required": true,
+                "show": true,
+                "value": "gpt-4o-mini",
+                "display_name": "Model Name"
+              },
+              "openai_api_key": {
+                "type": "str",
+                "required": true,
+                "show": true,
+                "value": "",
+                "display_name": "OpenAI API Key",
+                "password": true
+              },
+              "temperature": {
+                "type": "float",
+                "required": false,
+                "show": true,
+                "value": 0.5,
+                "display_name": "Temperature"
+              },
+              "system_message": {
+                "type": "str",
+                "required": false,
+                "show": true,
+                "multiline": true,
+                "value": "You are a skilled email writer. You will receive an original draft email and detailed reviewer feedback.\n\nYour job:\n1. Apply ALL the reviewer's feedback and suggested fixes\n2. Maintain the warm, helpful tone\n3. Keep the email under 150 words\n4. Ensure no unauthorized promises (discounts, credits, extended trials)\n5. Make the CTA clear and low-pressure\n\nOutput ONLY the final revised email. No commentary, no explanation, no preamble.",
+                "display_name": "System Message"
+              },
+              "input_value": {
+                "type": "str",
+                "required": true,
+                "show": true,
+                "multiline": true,
+                "value": "",
+                "display_name": "Input",
+                "input_types": ["Message"]
+              }
+            },
+            "outputs": [
+              {
+                "name": "text_output",
+                "display_name": "Final Email",
+                "method": "text_response",
+                "types": ["Message"]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "TextOutput-FINAL",
+        "type": "genericNode",
+        "position": {"x": 2100, "y": 300},
+        "data": {
+          "id": "TextOutput-FINAL",
+          "display_name": "Final Nudge Email",
+          "description": "The polished, reviewed nudge email ready to send",
+          "type": "TextOutput",
+          "node": {
+            "base_classes": ["Message"],
+            "display_name": "Final Nudge Email",
+            "description": "Output: the final reviewed and revised nudge email",
+            "template": {
+              "_type": "Component",
+              "input_value": {
+                "type": "str",
+                "required": true,
+                "show": true,
+                "multiline": true,
+                "value": "",
+                "display_name": "Output",
+                "input_types": ["Message"]
+              }
+            },
+            "outputs": [
+              {
+                "name": "text",
+                "display_name": "Final Email",
+                "method": "text_response",
+                "types": ["Message"]
+              }
+            ]
+          }
+        }
+      },
+      {
+        "id": "Note-INSTRUCTIONS",
+        "type": "noteNode",
+        "position": {"x": 100, "y": 50},
+        "data": {
+          "node": {
+            "description": "# Reflection Pattern: NovaByte Nudge Email\n\n## How this flow works:\n1. **User Profile Input** → Trial user data (pre-filled with Raj's profile)\n2. **Drafter Agent** → Writes a personalized nudge email\n3. **Reviewer Agent** → Critiques against 7 quality criteria\n4. **Combine** → Merges draft + feedback\n5. **Reviser Agent** → Produces polished final version\n\n## Exercise: Modify the Reviewer!\nClick on the **Reviewer Agent** node and edit its System Message.\n\nTry adding:\n- `Check if the email creates false urgency`\n- `Ensure the email does not exceed 100 words`\n- `Be more strict about discount language`\n- `Verify the email works for the user's specific industry`\n\nThen run again and compare the output!",
+            "display_name": "Instructions",
+            "template": {}
+          }
+        }
+      }
+    ],
+    "edges": [
+      {
+        "id": "edge-user-to-drafter",
+        "source": "TextInput-USER",
+        "target": "OpenAIModel-DRAFTER",
+        "sourceHandle": "{\"dataType\":\"TextInput\",\"id\":\"TextInput-USER\",\"name\":\"text\",\"output_types\":[\"Message\"]}",
+        "targetHandle": "{\"fieldName\":\"input_value\",\"id\":\"OpenAIModel-DRAFTER\",\"inputTypes\":[\"Message\"],\"type\":\"str\"}",
+        "data": {
+          "sourceHandle": {
+            "dataType": "TextInput",
+            "id": "TextInput-USER",
+            "name": "text",
+            "output_types": ["Message"]
+          },
+          "targetHandle": {
+            "fieldName": "input_value",
+            "id": "OpenAIModel-DRAFTER",
+            "inputTypes": ["Message"],
+            "type": "str"
+          }
+        }
+      },
+      {
+        "id": "edge-drafter-to-reviewer",
+        "source": "OpenAIModel-DRAFTER",
+        "target": "OpenAIModel-REVIEWER",
+        "sourceHandle": "{\"dataType\":\"OpenAIModel\",\"id\":\"OpenAIModel-DRAFTER\",\"name\":\"text_output\",\"output_types\":[\"Message\"]}",
+        "targetHandle": "{\"fieldName\":\"input_value\",\"id\":\"OpenAIModel-REVIEWER\",\"inputTypes\":[\"Message\"],\"type\":\"str\"}",
+        "data": {
+          "sourceHandle": {
+            "dataType": "OpenAIModel",
+            "id": "OpenAIModel-DRAFTER",
+            "name": "text_output",
+            "output_types": ["Message"]
+          },
+          "targetHandle": {
+            "fieldName": "input_value",
+            "id": "OpenAIModel-REVIEWER",
+            "inputTypes": ["Message"],
+            "type": "str"
+          }
+        }
+      },
+      {
+        "id": "edge-drafter-to-combine",
+        "source": "OpenAIModel-DRAFTER",
+        "target": "Prompt-COMBINE",
+        "sourceHandle": "{\"dataType\":\"OpenAIModel\",\"id\":\"OpenAIModel-DRAFTER\",\"name\":\"text_output\",\"output_types\":[\"Message\"]}",
+        "targetHandle": "{\"fieldName\":\"draft\",\"id\":\"Prompt-COMBINE\",\"inputTypes\":[\"Message\"],\"type\":\"str\"}",
+        "data": {
+          "sourceHandle": {
+            "dataType": "OpenAIModel",
+            "id": "OpenAIModel-DRAFTER",
+            "name": "text_output",
+            "output_types": ["Message"]
+          },
+          "targetHandle": {
+            "fieldName": "draft",
+            "id": "Prompt-COMBINE",
+            "inputTypes": ["Message"],
+            "type": "str"
+          }
+        }
+      },
+      {
+        "id": "edge-reviewer-to-combine",
+        "source": "OpenAIModel-REVIEWER",
+        "target": "Prompt-COMBINE",
+        "sourceHandle": "{\"dataType\":\"OpenAIModel\",\"id\":\"OpenAIModel-REVIEWER\",\"name\":\"text_output\",\"output_types\":[\"Message\"]}",
+        "targetHandle": "{\"fieldName\":\"feedback\",\"id\":\"Prompt-COMBINE\",\"inputTypes\":[\"Message\"],\"type\":\"str\"}",
+        "data": {
+          "sourceHandle": {
+            "dataType": "OpenAIModel",
+            "id": "OpenAIModel-REVIEWER",
+            "name": "text_output",
+            "output_types": ["Message"]
+          },
+          "targetHandle": {
+            "fieldName": "feedback",
+            "id": "Prompt-COMBINE",
+            "inputTypes": ["Message"],
+            "type": "str"
+          }
+        }
+      },
+      {
+        "id": "edge-combine-to-reviser",
+        "source": "Prompt-COMBINE",
+        "target": "OpenAIModel-REVISER",
+        "sourceHandle": "{\"dataType\":\"Prompt\",\"id\":\"Prompt-COMBINE\",\"name\":\"prompt\",\"output_types\":[\"Message\"]}",
+        "targetHandle": "{\"fieldName\":\"input_value\",\"id\":\"OpenAIModel-REVISER\",\"inputTypes\":[\"Message\"],\"type\":\"str\"}",
+        "data": {
+          "sourceHandle": {
+            "dataType": "Prompt",
+            "id": "Prompt-COMBINE",
+            "name": "prompt",
+            "output_types": ["Message"]
+          },
+          "targetHandle": {
+            "fieldName": "input_value",
+            "id": "OpenAIModel-REVISER",
+            "inputTypes": ["Message"],
+            "type": "str"
+          }
+        }
+      },
+      {
+        "id": "edge-reviser-to-output",
+        "source": "OpenAIModel-REVISER",
+        "target": "TextOutput-FINAL",
+        "sourceHandle": "{\"dataType\":\"OpenAIModel\",\"id\":\"OpenAIModel-REVISER\",\"name\":\"text_output\",\"output_types\":[\"Message\"]}",
+        "targetHandle": "{\"fieldName\":\"input_value\",\"id\":\"TextOutput-FINAL\",\"inputTypes\":[\"Message\"],\"type\":\"str\"}",
+        "data": {
+          "sourceHandle": {
+            "dataType": "OpenAIModel",
+            "id": "OpenAIModel-REVISER",
+            "name": "text_output",
+            "output_types": ["Message"]
+          },
+          "targetHandle": {
+            "fieldName": "input_value",
+            "id": "TextOutput-FINAL",
+            "inputTypes": ["Message"],
+            "type": "str"
+          }
+        }
+      }
+    ],
+    "viewport": {"x": 0, "y": 0, "zoom": 0.7}
+  },
+  "description": "Reflection Pattern: An agent drafts a conversion nudge email, a reviewer critiques it against quality criteria, and a reviser produces the polished final version. Exercise: modify the Reviewer Agent's criteria to see how output changes.",
+  "name": "Reflection Pattern - NovaByte Nudge Email",
+  "endpoint_name": null,
+  "is_component": false,
+  "last_tested_version": "1.1.0",
+  "tags": ["session1", "reflection-pattern", "novabyte"]
+}
